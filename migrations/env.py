@@ -2,6 +2,7 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+
 from fastzero.models import table_registry
 from fastzero.settings import Settings
 
@@ -11,7 +12,6 @@ from alembic import context
 # access to the values within the .ini file in use.
 config = context.config
 config.set_main_option("sqlalchemy.url", Settings().DATABASE_URL)
-
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:
